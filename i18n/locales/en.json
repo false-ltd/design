@@ -1,0 +1,47 @@
+{
+    "site": {
+        "title": "Design — Curated Design Systems",
+        "description": "A curated collection of 66 company design systems across 9 industries."
+    },
+    "hero": {
+        "title": "A curated collection of design systems",
+        "subtitle": "{count} companies · 9 industries · light & dark modes"
+    },
+    "filter": {
+        "all": "All",
+        "noResults": "No designs in this category."
+    },
+    "category": {
+        "ai": "AI & LLM",
+        "developerTools": "Developer Tools",
+        "backend": "Backend & DB",
+        "productivity": "Productivity",
+        "design": "Design & Creative",
+        "fintech": "Fintech",
+        "ecommerce": "E-commerce & Retail",
+        "media": "Media & Consumer",
+        "automotive": "Automotive"
+    },
+    "detail": {
+        "allDesigns": "← All designs",
+        "colors": "Colors",
+        "typography": "Typography",
+        "keyTraits": "Key Traits",
+        "resources": "Resources",
+        "viewDesignMd": "View full design.md →",
+        "viewDoc": "Read Design Spec",
+        "openLightPreview": "Open light preview →",
+        "openDarkPreview": "Open dark preview →",
+        "notFound": "Design not found",
+        "loading": "Loading document…",
+        "copy": "Copy",
+        "copied": "Copied"
+    },
+    "preview": {
+        "light": "Light",
+        "dark": "Dark"
+    },
+    "footer": {
+        "builtWith": "Built with Nuxt"
+    }
+}

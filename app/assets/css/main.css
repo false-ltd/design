@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+@plugin "@tailwindcss/typography";
+
+/* Color system — auto-adapts to light/dark mode */
+:root {
+    --c-bg: #ffffff;
+    --c-bg-elevated: #f6f5f4;
+    --c-bg-hover: #eceae7;
+    --c-text: rgba(0, 0, 0, 0.95);
+    --c-text-secondary: #615d59;
+    --c-text-muted: #a39e98;
+    --c-border: rgba(0, 0, 0, 0.1);
+    --c-accent: rgba(0, 0, 0, 0.95);
+}
+
+.dark {
+    --c-bg: #181614;
+    --c-bg-elevated: #252220;
+    --c-bg-hover: #332f2c;
+    --c-text: rgba(255, 255, 255, 0.93);
+    --c-text-secondary: #c8c3bd;
+    --c-text-muted: #8a8580;
+    --c-border: rgba(255, 255, 255, 0.08);
+    --c-accent: rgba(255, 255, 255, 0.93);
+}

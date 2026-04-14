@@ -1,0 +1,101 @@
+<script setup lang="ts">
+    import { marked } from "marked";
+    import { findDesign } from "~/composables/useDesigns";
+
+    const { t } = useI18n();
+
+    definePageMeta({
+        layout: "detail",
+    });
+
+    const route = useRoute();
+    const slug = computed(() => {
+        const s = route.params.slug;
+        return Array.isArray(s) ? s[0] : s;
+    });
+
+    const design = computed(() => findDesign(slug.value ?? ""));
+
+    if (!design.value) {
+        throw createError({ statusCode: 404, statusMessage: t("detail.notFound") });
+    }
+
+    useHead({
+        title: design.value ? `${design.value.name} — Design` : "Design",
+    });
+
+    // Slideover for design.md
+    const docOpen = ref(false);
+    const mdUrl = computed(() => `/designs/${slug.value}/design.md`);
+    const { data: rawMd, pending: mdPending } = useFetch<string>(mdUrl);
+    const renderedMd = computed(() => {
+        if (!rawMd.value) return "";
+        return marked(rawMd.value, { async: false }) as string;
+    });
+
+    const copied = ref(false);
+    async function copyMd() {
+        if (!rawMd.value) return;
+        await navigator.clipboard.writeText(rawMd.value);
+        copied.value = true;
+        setTimeout(() => {
+            copied.value = false;
+        }, 2000);
+    }
+</script>
+
+<template>
+    <div v-if="design" class="h-[calc(100vh-48px)]">
+        <!-- Mobile: stacked -->
+        <div class="lg:hidden">
+            <div class="border-b border-(--c-border)">
+                <SpecSummary :design="design" @open-doc="docOpen = true" />
+            </div>
+            <div class="h-[60vh]">
+                <PreviewFrame :slug="design.slug" />
+            </div>
+        </div>
+
+        <!-- Desktop: side-by-side -->
+        <div class="hidden lg:grid lg:grid-cols-[320px_1fr] h-full">
+            <div class="border-r border-(--c-border) h-full overflow-hidden">
+                <SpecSummary :design="design" @open-doc="docOpen = true" />
+            </div>
+            <div class="h-full">
+                <PreviewFrame :slug="design.slug" />
+            </div>
+        </div>
+
+        <!-- Document modal -->
+        <UModal v-model:open="docOpen">
+            <template #header>
+                <div class="flex items-center justify-between w-full">
+                    <span class="text-sm font-semibold text-(--c-text)">{{ design.name }}</span>
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="cursor-pointer text-xs text-(--c-text-secondary) hover:text-(--c-text) transition-colors flex items-center gap-1 px-1.5 py-1 rounded"
+                            @click="copyMd"
+                        >
+                            <UIcon :name="copied ? 'lucide-check' : 'lucide-clipboard'" class="text-xl" />
+                        </button>
+                        <button class="text-xl rounded cursor-pointer" @click="docOpen = false">
+                            <UIcon name="i-lucide-x" class="text-xl" />
+                        </button>
+                    </div>
+                </div>
+            </template>
+            <template #body>
+                <div class="h-full w-full overflow-auto">
+                    <div v-if="mdPending" class="px-6 py-8 text-sm text-(--c-text-muted)">
+                        {{ t("detail.loading") }}
+                    </div>
+                    <div
+                        v-else-if="renderedMd"
+                        class="px-6 pb-6 prose prose-neutral dark:prose-invert max-w-none"
+                        v-html="renderedMd"
+                    />
+                </div>
+            </template>
+        </UModal>
+    </div>
+</template>

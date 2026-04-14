@@ -1,0 +1,47 @@
+{
+    "site": {
+        "title": "Design — 精选设计系统",
+        "description": "涵盖 9 大行业的 66 家企业设计系统精选合集。"
+    },
+    "hero": {
+        "title": "精选设计系统合集",
+        "subtitle": "{count} 家企业 · 9 个行业 · 明暗双模式"
+    },
+    "filter": {
+        "all": "全部",
+        "noResults": "该分类下暂无设计。"
+    },
+    "category": {
+        "ai": "AI 与大模型",
+        "developerTools": "开发工具",
+        "backend": "后端与数据库",
+        "productivity": "效率工具",
+        "design": "设计与创意",
+        "fintech": "金融科技",
+        "ecommerce": "电商与零售",
+        "media": "媒体与消费",
+        "automotive": "汽车"
+    },
+    "detail": {
+        "allDesigns": "← 全部设计",
+        "colors": "配色",
+        "typography": "字体",
+        "keyTraits": "核心特征",
+        "resources": "资源",
+        "viewDesignMd": "查看完整 design.md →",
+        "viewDoc": "阅读设计规范",
+        "openLightPreview": "打开亮色预览 →",
+        "openDarkPreview": "打开暗色预览 →",
+        "notFound": "未找到该设计",
+        "loading": "文档加载中…",
+        "copy": "复制",
+        "copied": "已复制"
+    },
+    "preview": {
+        "light": "亮色",
+        "dark": "暗色"
+    },
+    "footer": {
+        "builtWith": "基于 Nuxt 构建"
+    }
+}
