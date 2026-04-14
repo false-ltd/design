@@ -203,7 +203,7 @@ The border system is particularly distinctive -- Cursor uses `oklab()` color spa
 ### Whitespace Philosophy
 - **Warm negative space**: The cream background means whitespace has warmth and texture, unlike cold white minimalism. Large empty areas feel cozy rather than clinical.
 - **Compressed text, open layout**: Aggressive negative letter-spacing on CursorGothic headlines is balanced by generous surrounding margins. Text is dense; space around it breathes.
-- **Section variation**: Alternating surface tones (cream â lighter cream â cream) create subtle section differentiation without harsh boundaries.
+- **Section variation**: Alternating surface tones (cream → lighter cream → cream) create subtle section differentiation without harsh boundaries.
 
 ### Border Radius Scale
 - Micro (1.5px): Fine detail elements
@@ -237,7 +237,7 @@ The border system is particularly distinctive -- Cursor uses `oklab()` color spa
 ### Hover States
 - Buttons: text color shifts to `--color-error` (`#cf2d56`) on hover -- a distinctive warm crimson that signals interactivity
 - Links: color shift to accent orange (`#f54e00`) or underline decoration with `rgba(38, 37, 30, 0.4)`
-- Cards: shadow intensification on hover (ambient â elevated)
+- Cards: shadow intensification on hover (ambient → elevated)
 
 ### Focus States
 - Shadow-based focus: `rgba(0,0,0,0.1) 0px 4px 12px` for depth-based focus indication
@@ -266,12 +266,12 @@ The border system is particularly distinctive -- Cursor uses `oklab()` color spa
 - Navigation links at 14px with adequate spacing for touch
 
 ### Collapsing Strategy
-- Hero: 72px CursorGothic â 36px â 26px on smaller screens, maintaining proportional letter-spacing
-- Navigation: horizontal links â hamburger menu on mobile
-- Feature cards: 3-column â 2-column â single column stacked
+- Hero: 72px CursorGothic → 36px → 26px on smaller screens, maintaining proportional letter-spacing
+- Navigation: horizontal links → hamburger menu on mobile
+- Feature cards: 3-column → 2-column → single column stacked
 - Code editor screenshots: maintain aspect ratio, may shrink with border treatment preserved
-- Timeline visualization: horizontal â vertical stacking
-- Section spacing: 80px+ â 48px â 32px on mobile
+- Timeline visualization: horizontal → vertical stacking
+- Section spacing: 80px+ → 48px → 32px on mobile
 
 ### Image Behavior
 - Editor screenshots maintain warm border treatment at all sizes

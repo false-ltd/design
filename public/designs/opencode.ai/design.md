@@ -207,9 +207,9 @@ The color system is deliberately minimal. The primary palette consists of just t
 ### Hover States
 - Links: color shift from default to accent blue (`#007aff`) or underline style change
 - Buttons: subtle background lightening or border emphasis
-- Accent blue provides a three-stage hover sequence: `#007aff` â `#0056b3` â `#004085` (default â hover â active)
-- Danger red: `#ff3b30` â `#d70015` â `#a50011`
-- Warning orange: `#ff9f0a` â `#cc7f08` â `#995f06`
+- Accent blue provides a three-stage hover sequence: `#007aff` → `#0056b3` → `#004085` (default → hover → active)
+- Danger red: `#ff3b30` → `#d70015` → `#a50011`
+- Warning orange: `#ff9f0a` → `#cc7f08` → `#995f06`
 
 ### Focus States
 - Border-based focus: increased border opacity or solid border color
@@ -236,12 +236,12 @@ The color system is deliberately minimal. The primary palette consists of just t
 - Tab items at 16px with tight line-height may need mobile adaptation
 
 ### Collapsing Strategy
-- Hero heading: 38px â 28px â 24px on smaller screens
-- Navigation: horizontal links â hamburger/drawer on mobile
+- Hero heading: 38px → 28px → 24px on smaller screens
+- Navigation: horizontal links → hamburger/drawer on mobile
 - Feature lists: maintain single-column, reduce horizontal padding
 - Terminal hero: maintain full-width, reduce internal padding
-- Footer columns: multi-column â stacked single column
-- Section spacing: 96px â 64px â 48px on mobile
+- Footer columns: multi-column → stacked single column
+- Section spacing: 96px → 64px → 48px on mobile
 
 ### Image Behavior
 - Terminal screenshots maintain aspect ratio and border treatment
@@ -276,6 +276,6 @@ The color system is deliberately minimal. The primary palette consists of just t
 3. The warm undertone matters: use `#201d1d` not `#000000`, use `#fdfcfc` not `#ffffff`. The reddish warmth is subtle but essential.
 4. Border radius is 4px everywhere except inputs (6px). Never use rounded pills or large radii.
 5. Semantic colors follow Apple HIG: `#007aff` blue, `#ff3b30` red, `#30d158` green, `#ff9f0a` orange. Each has hover and active darkened variants.
-6. Three-stage interaction: default â hover (darkened) â active (deeply darkened) for all semantic colors.
+6. Three-stage interaction: default → hover (darkened) → active (deeply darkened) for all semantic colors.
 7. Borders use `rgba(15, 0, 0, 0.12)` -- a warm transparent dark, not neutral gray. This ties borders to the warm palette.
 8. Spacing follows an 8px grid: 8, 16, 24, 32, 40, 48, 64, 80, 96px. Use 4px for fine adjustments only.
