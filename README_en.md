@@ -2,11 +2,11 @@ English | [中文](README.md)
 
 # Design — Curated Design Systems
 
-An unofficial redesigned showcase of [geetdesign.md](https://geetdesign.md). The original site has a great collection of design system resources.
+A showcase website built on the [geetdesign.md](https://geetdesign.md) data source. The original site has a great collection of design system resources.
 
 This site curates 66 company design systems with interactive light/dark previews and design specification documents.
 
-**Live site: [design.false.ltd](https://design.false.ltd)**
+**Live site: [https://design.false.ltd](https://design.false.ltd)**
 
 ## Screenshots
 

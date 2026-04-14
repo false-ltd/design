@@ -2,10 +2,10 @@
 
 # Design — 精选设计系统
 
-基于 [geetdesign.md](https://geetdesign.md) 重新设计的非官方展示网站。原站收录的设计系统资源很棒。
+基于 [geetdesign.md](https://geetdesign.md) 数据源设计的展示网站。原站收录的设计系统资源很棒。
 精选 66 家企业设计系统，提供交互式明暗预览和设计规范文档。
 
-**在线访问：[design.false.ltd](https://design.false.ltd)**
+**在线访问：[https://design.false.ltd](https://design.false.ltd)**
 
 ## 预览
 

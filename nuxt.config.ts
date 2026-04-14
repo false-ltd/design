@@ -1,10 +1,11 @@
 export default defineNuxtConfig({
     compatibilityDate: "2025-07-15",
-    devtools: { enabled: true },
+    devtools: { enabled: false },
+    ssr: false,
     modules: ["@nuxt/ui", "@nuxtjs/i18n"],
     css: ["~/assets/css/main.css"],
-    nitro: {
-        preset: "cloudflare-pages",
+    app: {
+        buildAssetsDir: "assets",
     },
     i18n: {
         locales: [
