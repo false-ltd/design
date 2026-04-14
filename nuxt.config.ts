@@ -3,6 +3,9 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: ["@nuxt/ui", "@nuxtjs/i18n"],
     css: ["~/assets/css/main.css"],
+    nitro: {
+        preset: "cloudflare-pages",
+    },
     i18n: {
         locales: [
             { code: "en", name: "English", file: "en.json" },
