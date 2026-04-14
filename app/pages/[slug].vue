@@ -51,22 +51,21 @@
             copied.value = false;
         }, 2000);
     }
+
 </script>
 
 <template>
-    <div v-if="design" class="h-[calc(100vh-48px)]">
-        <!-- Mobile: stacked -->
-        <div class="lg:hidden">
-            <div class="border-b border-(--c-border)">
-                <SpecSummary :design="design" @open-doc="docOpen = true" />
-            </div>
-            <div class="h-[60vh]">
-                <PreviewFrame :slug="design.slug" />
-            </div>
+    <!-- Mobile: natural scroll, spec scrolls away, preview fills viewport -->
+    <div class="lg:hidden">
+        <SpecSummary :design="design" @open-doc="docOpen = true" />
+        <div class="h-[calc(100vh-48px)]">
+            <PreviewFrame :slug="design.slug" />
         </div>
+    </div>
 
-        <!-- Desktop: side-by-side -->
-        <div class="hidden lg:grid lg:grid-cols-[320px_1fr] h-full">
+    <!-- Desktop: side-by-side fixed viewport -->
+    <div v-if="design" class="hidden lg:block h-[calc(100vh-48px)]">
+        <div class="grid grid-cols-[320px_1fr] h-full">
             <div class="border-r border-(--c-border) h-full overflow-hidden">
                 <SpecSummary :design="design" @open-doc="docOpen = true" />
             </div>
@@ -74,8 +73,9 @@
                 <PreviewFrame :slug="design.slug" />
             </div>
         </div>
+    </div>
 
-        <!-- Document modal -->
+    <!-- Document modal -->
         <UModal v-model:open="docOpen">
             <template #header>
                 <div class="flex items-center justify-between w-full">
@@ -106,5 +106,4 @@
                 </div>
             </template>
         </UModal>
-    </div>
 </template>

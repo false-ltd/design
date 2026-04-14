@@ -33,13 +33,15 @@
         "openLightPreview": "Open light preview →",
         "openDarkPreview": "Open dark preview →",
         "notFound": "Design not found",
+        "spec": "Spec",
         "loading": "Loading document…",
         "copy": "Copy",
         "copied": "Copied"
     },
     "preview": {
         "light": "Light",
-        "dark": "Dark"
+        "dark": "Dark",
+        "title": "Preview"
     },
     "footer": {
         "builtWith": "Built with Nuxt"

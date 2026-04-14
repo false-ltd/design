@@ -13,7 +13,7 @@
 </script>
 
 <template>
-    <div class="h-full flex flex-col bg-(--c-bg-elevated)">
+    <div class="h-full relative bg-(--c-bg-elevated)">
         <!-- Toggle bar -->
         <div class="flex items-center gap-1.5 px-4 py-2">
             <button
@@ -40,13 +40,15 @@
             </button>
         </div>
 
-        <!-- iframe -->
-        <div class="flex-1 p-3 pt-0">
-            <iframe
-                :src="src"
-                class="w-full h-full rounded-lg border border-(--c-border) bg-white"
-                :title="`${slug} design preview (${variant})`"
-            ></iframe>
+        <!-- iframe — absolute positioned to fill remaining space -->
+        <div class="absolute inset-x-0 bottom-0" style="top: 44px">
+            <div class="px-3 pb-3 h-full">
+                <iframe
+                    :src="src"
+                    class="w-full h-full rounded-lg border border-(--c-border) bg-white"
+                    :title="`${slug} design preview (${variant})`"
+                ></iframe>
+            </div>
         </div>
     </div>
 </template>
