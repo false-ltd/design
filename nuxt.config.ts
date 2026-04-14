@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     css: ["~/assets/css/main.css"],
     app: {
         buildAssetsDir: "assets",
+        head: {
+            link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+        },
     },
     i18n: {
         locales: [

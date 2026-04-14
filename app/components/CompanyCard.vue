@@ -3,6 +3,7 @@
     import { avatarUrl } from "~/composables/useDesigns";
 
     const { t } = useI18n();
+    const localePath = useLocalePath();
 
     defineProps<{
         design: Design;
@@ -11,7 +12,7 @@
 
 <template>
     <NuxtLink
-        :to="`/${design.slug}`"
+        :to="localePath(`/${design.slug}`)"
         class="block p-4 rounded-xl border border-(--c-border) transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06),0_0_0_1px_rgba(0,0,0,0.04)] hover:border-(--c-text-muted)"
     >
         <div class="flex items-center gap-2.5 mb-2">

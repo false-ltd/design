@@ -24,6 +24,15 @@
         title: design.value ? `${design.value.name} — Design` : "Design",
     });
 
+    useSeoMeta({
+        title: () => design.value ? `${design.value.name} — Design` : "Design",
+        ogTitle: () => design.value ? `${design.value.name} Design System — Design` : "Design",
+        description: () => design.value?.description ?? "",
+        ogDescription: () => design.value?.description ?? "",
+        ogType: "article",
+        ogUrl: () => `https://design.false.ltd/${slug.value}`,
+    });
+
     // Slideover for design.md
     const docOpen = ref(false);
     const mdUrl = computed(() => `/designs/${slug.value}/design.md`);

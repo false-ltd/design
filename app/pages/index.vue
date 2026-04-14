@@ -8,6 +8,17 @@
     const { t } = useI18n();
     const activeCategory = ref("all");
 
+    useSeoMeta({
+        title: () => t("site.title"),
+        ogTitle: () => t("site.title"),
+        description: () => t("site.description"),
+        ogDescription: () => t("site.description"),
+        ogType: "website",
+        ogUrl: "https://design.false.ltd",
+        ogImage: "https://design.false.ltd/home.png",
+        twitterCard: "summary_large_image",
+    });
+
     const filteredDesigns = computed(() => {
         if (activeCategory.value === "all") return DESIGNS;
         return DESIGNS.filter((d) => d.categoryKey === activeCategory.value);
