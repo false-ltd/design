@@ -1,0 +1,11 @@
+node_modules
+.git
+.github
+.output
+.nuxt
+.DS_Store
+*.md
+docs
+k8s.yml
+nginx.conf
+.env*
