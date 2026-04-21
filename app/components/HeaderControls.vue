@@ -1,38 +1,28 @@
 <script setup lang="ts">
     const switchLocalePath = useSwitchLocalePath();
+    const { locale, locales } = useI18n();
+
+    const localeItems = computed(() =>
+        (locales.value as { code: string; name: string }[]).map((l) => ({
+            label: l.name,
+            icon: locale.value === l.code ? "i-lucide-check" : undefined,
+            to: switchLocalePath(l.code as "en" | "zh"),
+        })),
+    );
 </script>
 
 <template>
     <div class="flex items-center gap-3">
-        <!-- Language switcher -->
-        <div class="flex items-center gap-1">
-            <NuxtLink
-                :to="switchLocalePath('en')"
-                class="text-[10px] px-1.5 py-0.5 rounded transition-colors"
-                :class="
-                    $i18n.locale === 'en'
-                        ? 'text-(--c-text) font-medium'
-                        : 'text-(--c-text-muted) hover:text-(--c-text-secondary)'
-                "
-            >
-                EN
-            </NuxtLink>
-            <span class="text-[10px] text-(--c-border)">|</span>
-            <NuxtLink
-                :to="switchLocalePath('zh')"
-                class="text-[10px] px-1.5 py-0.5 rounded transition-colors"
-                :class="
-                    $i18n.locale === 'zh'
-                        ? 'text-(--c-text) font-medium'
-                        : 'text-(--c-text-muted) hover:text-(--c-text-secondary)'
-                "
-            >
-                中
-            </NuxtLink>
-        </div>
-        <UColorModeButton />
         <ULink to="https://github.com/false-ltd/design" external
             ><UIcon name="i-lucide-github" class="text-base"
         /></ULink>
+        <UColorModeButton class="cursor-pointer" />
+        <UDropdownMenu :items="localeItems">
+            <button
+                class="p-1.5 rounded-lg hover:bg-accented transition-colors flex cursor-pointer items-center gap-1.5"
+            >
+                <UIcon name="i-lucide-languages" class="w-4 h-4 text-toned" />
+            </button>
+        </UDropdownMenu>
     </div>
 </template>
