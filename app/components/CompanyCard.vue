@@ -21,6 +21,7 @@
                 :alt="design.name"
                 class="w-6 h-6 rounded-full bg-(--c-bg-elevated)"
                 loading="lazy"
+                decoding="async"
             />
             <span class="text-sm font-medium text-(--c-text)">{{ design.name }}</span>
         </div>
