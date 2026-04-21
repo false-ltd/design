@@ -43,7 +43,7 @@ export function parseDesignMd(md: string): DesignSpec {
 export function useDesignSpec(slug: string) {
     const url = `/designs/${slug}/design.md`;
 
-    const { data: rawMd, pending, error } = useFetch<string>(url);
+    const { data: rawMd, pending, error } = useFetch<string>(url, { responseType: "text" });
 
     const spec = computed<DesignSpec | null>(() => {
         if (!rawMd.value) return null;

@@ -36,7 +36,7 @@
     // Slideover for design.md
     const docOpen = ref(false);
     const mdUrl = computed(() => `/designs/${slug.value}/design.md`);
-    const { data: rawMd, pending: mdPending } = useFetch<string>(mdUrl);
+    const { data: rawMd, pending: mdPending } = useFetch<string>(mdUrl, { responseType: "text" });
     const renderedMd = computed(() => {
         if (!rawMd.value) return "";
         return marked(rawMd.value, { async: false }) as string;
