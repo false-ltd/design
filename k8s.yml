@@ -13,8 +13,6 @@ spec:
             labels:
                 app: design
         spec:
-            imagePullSecrets:
-                - name: ghcr-secret
             containers:
                 - name: design
                   image: ghcr.io/false-ltd/design:latest
