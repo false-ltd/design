@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen bg-(--c-bg) relative">
-        <AppHeader />
+    <AppHeader />
+    <UMain>
         <slot />
-    </div>
+    </UMain>
 </template>

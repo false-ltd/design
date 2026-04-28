@@ -1,43 +1,37 @@
 <script setup lang="ts">
-    import { previewUrl } from "~/composables/useDesigns";
+import { previewUrl } from "~/composables/useDesigns";
 
-    const { t } = useI18n();
+const { t } = useI18n();
 
-    const props = defineProps<{
-        slug: string;
-    }>();
+const props = defineProps<{
+    slug: string;
+}>();
 
-    const variant = ref<"light" | "dark">("light");
+const variant = ref<"light" | "dark">("light");
 
-    const src = computed(() => previewUrl(props.slug, variant.value));
+const src = computed(() => previewUrl(props.slug, variant.value));
 </script>
 
 <template>
-    <div class="h-full relative bg-(--c-bg-elevated)">
+    <div class="h-full relative bg-elevated">
         <!-- Toggle bar -->
         <div class="flex items-center gap-1.5 px-4 py-2">
-            <button
-                class="px-3 py-1 rounded-full text-[11px] transition-all cursor-pointer"
-                :class="
-                    variant === 'light'
-                        ? 'bg-(--c-accent) text-(--c-bg)'
-                        : 'bg-(--c-bg) text-(--c-text-secondary) border border-(--c-border)'
-                "
+            <UButton
+                :label="t('preview.light')"
+                :variant="variant === 'light' ? 'solid' : 'outline'"
+                color="neutral"
+                size="xs"
+                class="rounded-full"
                 @click="variant = 'light'"
-            >
-                {{ t("preview.light") }}
-            </button>
-            <button
-                class="px-3 py-1 rounded-full text-[11px] transition-all cursor-pointer"
-                :class="
-                    variant === 'dark'
-                        ? 'bg-(--c-accent) text-(--c-bg)'
-                        : 'bg-(--c-bg) text-(--c-text-secondary) border border-(--c-border)'
-                "
+            />
+            <UButton
+                :label="t('preview.dark')"
+                :variant="variant === 'dark' ? 'solid' : 'outline'"
+                color="neutral"
+                size="xs"
+                class="rounded-full"
                 @click="variant = 'dark'"
-            >
-                {{ t("preview.dark") }}
-            </button>
+            />
         </div>
 
         <!-- iframe — absolute positioned to fill remaining space -->
@@ -45,9 +39,9 @@
             <div class="px-3 pb-3 h-full">
                 <iframe
                     :src="src"
-                    class="w-full h-full rounded-lg border border-(--c-border) bg-white"
+                    class="w-full h-full rounded-lg border border-default bg-white"
                     :title="`${slug} design preview (${variant})`"
-                ></iframe>
+                />
             </div>
         </div>
     </div>

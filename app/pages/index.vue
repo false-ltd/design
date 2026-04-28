@@ -1,40 +1,38 @@
 <script setup lang="ts">
-    import { DESIGNS } from "~/composables/useDesigns";
+import { DESIGNS } from "~/composables/useDesigns";
 
-    definePageMeta({
-        layout: "default",
-    });
+definePageMeta({
+    layout: "default",
+});
 
-    const { t } = useI18n();
-    const activeCategory = ref("all");
+const { t } = useI18n();
+const activeCategory = ref("all");
 
-    useSeoMeta({
-        title: () => t("site.title"),
-        ogTitle: () => t("site.title"),
-        description: () => t("site.description"),
-        ogDescription: () => t("site.description"),
-        ogType: "website",
-        ogUrl: "https://design.false.ltd",
-        ogImage: "https://design.false.ltd/home.png",
-        twitterCard: "summary_large_image",
-    });
+useSeoMeta({
+    title: () => t("site.title"),
+    ogTitle: () => t("site.title"),
+    description: () => t("site.description"),
+    ogDescription: () => t("site.description"),
+    ogType: "website",
+    ogUrl: "https://design.false.ltd",
+    ogImage: "https://design.false.ltd/home.png",
+    twitterCard: "summary_large_image",
+});
 
-    const filteredDesigns = computed(() => {
-        if (activeCategory.value === "all") return DESIGNS;
-        return DESIGNS.filter((d) => d.categoryKey === activeCategory.value);
-    });
+const filteredDesigns = computed(() => {
+    if (activeCategory.value === "all") return DESIGNS;
+    return DESIGNS.filter((d) => d.categoryKey === activeCategory.value);
+});
 </script>
 
 <template>
     <div>
         <!-- Hero -->
         <div class="text-center pt-20 md:pt-24 pb-8 md:pb-12 px-4 md:px-6">
-            <h1
-                class="font-[Georgia,serif] text-4xl md:text-5xl font-normal text-(--c-text) leading-tight tracking-[-0.02em] mb-3"
-            >
+            <h1 class="font-[Georgia,serif] text-4xl md:text-5xl font-normal text-default leading-tight tracking-[-0.02em] mb-3">
                 {{ t("hero.title") }}
             </h1>
-            <p class="text-sm text-(--c-text-muted)">
+            <p class="text-sm text-muted">
                 {{ t("hero.subtitle", { count: DESIGNS.length }) }}
             </p>
         </div>
@@ -50,7 +48,7 @@
                 <CompanyCard v-for="design in filteredDesigns" :key="design.slug" :design="design" />
             </div>
 
-            <div v-if="filteredDesigns.length === 0" class="text-center py-20 text-sm text-(--c-text-muted)">
+            <div v-if="filteredDesigns.length === 0" class="text-center py-20 text-sm text-muted">
                 {{ t("filter.noResults") }}
             </div>
         </div>

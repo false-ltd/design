@@ -1,38 +1,36 @@
 <script setup lang="ts">
-import { CATEGORY_KEYS, CATEGORY_STYLE } from '~/composables/useDesigns'
+import { CATEGORY_KEYS } from "~/composables/useDesigns";
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const props = defineProps<{
-  modelValue: string
-}>()
+    modelValue: string;
+}>();
 
 const emit = defineEmits<{
-  'update:modelValue': [value: string]
-}>()
-
-function select(cat: string) {
-  emit('update:modelValue', cat)
-}
+    "update:modelValue": [value: string];
+}>();
 </script>
 
 <template>
-  <div class="flex flex-wrap justify-center gap-2">
-    <button
-      class="px-3 py-1 rounded-full text-xs transition-all cursor-pointer"
-      :class="modelValue === 'all' ? CATEGORY_STYLE.activeClass : CATEGORY_STYLE.inactiveClass"
-      @click="select('all')"
-    >
-      {{ t('filter.all') }}
-    </button>
-    <button
-      v-for="cat in CATEGORY_KEYS"
-      :key="cat"
-      class="px-3 py-1 rounded-full text-xs transition-all cursor-pointer"
-      :class="modelValue === cat ? CATEGORY_STYLE.activeClass : CATEGORY_STYLE.inactiveClass"
-      @click="select(cat)"
-    >
-      {{ t(`category.${cat}`) }}
-    </button>
-  </div>
+    <div class="flex flex-wrap justify-center gap-2">
+        <UButton
+            :label="t('filter.all')"
+            :variant="modelValue === 'all' ? 'solid' : 'outline'"
+            color="neutral"
+            size="xs"
+            class="rounded-full"
+            @click="emit('update:modelValue', 'all')"
+        />
+        <UButton
+            v-for="cat in CATEGORY_KEYS"
+            :key="cat"
+            :label="t(`category.${cat}`)"
+            :variant="modelValue === cat ? 'solid' : 'outline'"
+            color="neutral"
+            size="xs"
+            class="rounded-full"
+            @click="emit('update:modelValue', cat)"
+        />
+    </div>
 </template>

@@ -1,20 +1,30 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(rtk ls:*)",
-      "Bash(rtk tree:*)",
-      "Bash(rtk find:*)",
-      "Bash(rtk git:*)",
-      "Bash(rtk du:*)",
-      "Bash(pnpm dev:*)",
-      "Bash(rtk read:*)",
-      "Bash(pnpm build:*)",
-      "Bash(pnpm add:*)",
-      "Bash(rtk grep:*)",
-      "Bash(rtk wc:*)",
-      "Bash(rtk docker:*)",
-      "Bash(git check-ignore:*)",
-      "Bash(rtk curl:*)"
-    ]
-  }
+    "permissions": {
+        "allow": [
+            "Bash(rtk ls:*)",
+            "Bash(rtk tree:*)",
+            "Bash(rtk find:*)",
+            "Bash(rtk git:*)",
+            "Bash(rtk du:*)",
+            "Bash(pnpm dev:*)",
+            "Bash(rtk read:*)",
+            "Bash(pnpm build:*)",
+            "Bash(pnpm add:*)",
+            "Bash(rtk grep:*)",
+            "Bash(rtk wc:*)",
+            "Bash(rtk docker:*)",
+            "Bash(git check-ignore:*)",
+            "Bash(rtk curl:*)",
+            "Bash(pnpm run:*)",
+            "Bash(rtk gh:*)",
+            "Bash(git:*)",
+            "Bash(rtk go:*)",
+            "Bash(mysql:*)",
+            "Bash(python3:*)",
+            "Bash(rtk npx:*)",
+            "Bash(pnpm generate:*)",
+            "Bash(lsof -ti:3099)",
+            "Bash(xargs kill:*)"
+        ]
+    }
 }

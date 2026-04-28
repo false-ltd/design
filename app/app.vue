@@ -1,7 +1,13 @@
+<script setup lang="ts">
+import * as locales from "@nuxt/ui/locale";
+
+const { locale } = useI18n();
+</script>
+
 <template>
-  <UApp>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </UApp>
+    <UApp :locale="locales[locale.value]">
+        <NuxtLayout>
+            <NuxtPage />
+        </NuxtLayout>
+    </UApp>
 </template>

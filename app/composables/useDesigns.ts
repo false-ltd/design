@@ -34,11 +34,6 @@ export const CATEGORY_KEYS = [
     "automotive",
 ] as const;
 
-export const CATEGORY_STYLE = {
-    activeClass: "bg-[var(--c-accent)] text-(--c-bg)",
-    inactiveClass: "border border-[var(--c-border)] text-(--c-text-secondary)",
-};
-
 export const DESIGNS: Design[] = [
     {
         slug: "claude",
@@ -565,6 +560,6 @@ export function useDesigns() {
         markdownUrl,
         findDesign,
         designsByCategory,
-        categoryStyle: CATEGORY_STYLE,
+        categoryStyle: undefined,
     };
 }
